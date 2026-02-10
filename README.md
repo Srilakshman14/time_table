@@ -1,5 +1,5 @@
 # Ex02 Time Table
-# Date:7/2/26
+
 # AIM
 To write a html webpage page to display your slot timetable.
 
@@ -26,59 +26,69 @@ Execute the program using runserver command.
 ```
 <html>
 <head>
-<title>Slot Timetable</title>
+<title> Course Schedule </title>
 </head>
 <body>
-<center>
-<img src="logo.jpg" height="100" width="540">
-</center>
-<br>
+<img src="/static/logo.png" height="100" width="540">
 <table align="center" width="540" cellspacing="2" cellpadding="4" border="5" bgcolor="cyan">
-<caption><b>SLOT TIME TABLE -GURU REVANTH (212223230065)</b></caption>
+<caption><b>SCHEDULE OF ALL COURSES</b></caption>
 <tr align="center">
 <th bgcolor="yellow">Day/Time</th>
-<th bgcolor="yellow">Monday</th>
-<th bgcolor="yellow">Tuesday</th>
-<th bgcolor="yellow">Wednesday</th>
-<th bgcolor="yellow">Thursday</th>
-<th bgcolor="yellow">Friday</th>
-</tr>
-<tr align="center">
 <th bgcolor="yellow">8-10</th>
-<td>FUNDAMENTALS OF C PROGRAMMING</td>
-<td>COMMUNICATIVE ENGLISH</td>
-<td>PHYSICS FOR QUANTUM COMPUTATION</td>
-<td>STATISTICS AND NUMERICAL METHODS</td>
-<td>FUNDAMENTALS OF C PROGRAMMING</td>
-</tr>
-<tr align="center">
 <th bgcolor="yellow">10-12</th>
-<td>FREE SLOT</td>
-<td>FUNDAMENTALS OF WEB APPLICATION DEVELOPMENT</td>
-<td>PRINCIPLES OF CHEMISTRY IN ENGINEERING</td>
-<td>FREE SLOT</td>
-<td>STATISTICS AND NUMERICAL METHODS</td>
-</tr>
-<tr align="center">
 <th bgcolor="yellow">12-1</th>
-<td colspan="5" align="center">L U N C H</td>
-</tr>
-<tr align="center">
 <th bgcolor="yellow">1-3</th>
-<td>FREE SLOT</td>
-<td>FREE SLOT</td>
-<td>COMMUCATIVE ENGLISH</td>
-<td>FUNDAMENTALS OF WEB APPLICATION</td>
-<td>SOFT SKILLS</td>
+<th bgcolor="yellow">3-5</th>
+
 </tr>
 <tr align="center">
-<th bgcolor="yellow">3-5</th>
-<td>STATISTICS AND NUMERICAL METHODS</td>
-<td>FREE SLOT</td>
-<td>FUNDAMENTALS OF WEB APPLICATION DEVELOPMENT</td>
-<td>PHYSICS FOR QUANTUM COMPUTATION</td>
-<td>PRINCIPLES OF CHEMISTRY IN ENGINEERINGS</td>
+<th bgcolor="yellow">MONDAY</th>
+<td >FUNDAMENTAL OF WEB</td>
+<td>PYTHON</td>
+<td rowspan="6" >LUNCH </td>
+<td colspan="2">FREE SLOT</td>
+
+
 </tr>
+<tr align="center">
+<th bgcolor="yellow">TUESDAY</th>
+<td>COMMUNICATIVE ENGLISH</td>
+<td>COMMUNICATIVE ENGLISH </td>
+<td colspan="2">FREE SLOT</td>
+
+
+</tr>
+<tr align="center">
+<th bgcolor="yellow">WEDNESDAY</th>
+<td >FUNDAMENTAL OF WEB </td>
+<td>FUNDAMENTAL OF WEB</td>
+<td>MENTOR MEET</td>
+<td>PYTHON</td>
+
+</tr>
+<tr align="center">
+<th bgcolor="yellow">THURSDAY</th>
+<td>COMMUNICATIVE ENGLISH</td>
+<td>PYTHON</td>
+<td>COMMUNICATIVE ENGLISH</td>
+<td>PYTHON</td>
+
+</tr>
+<tr>
+<th bgcolor="yellow">FRIDAY</th>
+<td>FREE SLOT</td>
+<td>FUNDAMENTAL OF WEB</td>
+<td>FREE SLOT</td>
+<td>PYTHON</td>
+</tr>
+<tr>
+<th bgcolor="yellow">SATURDAY</th>
+<td>COMMUNICATIVE ENGLISH</td>
+<td>FUNDAMENTAL OF WEB</td>
+<td>COMMUNICATIVE ENGLISH</td>
+<td>FREE SLOT</td>
+</tr>
+
 </table>
 <br>
 <table align="center" cellspacing="2" cellpadding="4" border="2">
@@ -89,41 +99,41 @@ Execute the program using runserver command.
 </tr>
 <tr>
 <td align="center">1.</td>
-<td align="center">19A1414</td>
-<td>Fundamentals of Web Application Development (FWAD)</td>
+<td align="center">19AI414</td>
+<td>FUNDAMENTALS OF WEB (FWAD)</td>
 </tr>
 <tr>
 <td align="center">2.</td>
-<td align="center">19A1304</td>
-<td>FUNDAMENTALS OF C PROGRAMMING(C PROGRAM)</td>
+<td align="center">19AI301</td>
+<td>PYTHON PROGRAMMING (PYTHON PROGRAM)</td>
 </tr>
 <tr>
 <td align="center">3.</td>
-<td align="center">19A1414</td>
-<td>FUNDAMENTALS OF WEB APPLICATION DEVELOPMENT (FWAD)</td>
-</tr>
-<tr>
-<td align="center">4.</td>
-<td align="center">19CY205</td>
-<td>Principles of Chemistry in Engineering (CHE)</td>
-</tr>
-<tr>
-<td align="center">5.</td>
-<td align="center">19MA211</td>
-<td>STATISTICS AND NUMERICAL METHODS (MAT)</td>
-</tr>
-<tr>
-<td align="center">6.</td>
-<td align="center">19EY701</td>
-<td>Soft Skills (SS)</td>
+<td align="center">19EN301</td>
+<td> COMMUNICATIVE ENGLISH (ENG))</td>
 </tr>
 </table>
-</body>
-</html>
+</body> </html>
+
+
+from django.contrib import admin
+from django.urls import path
+from timtab import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home),
+]
+
+
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import render
+def home(request):
+    return render(request, 'home.html')
 ```
 # OUTPUT
-
-<img width="1127" height="823" alt="image" src="https://github.com/user-attachments/assets/0256de56-d29d-4687-bcec-468e9b57fba0" />
+<img width="1713" height="831" alt="image" src="https://github.com/user-attachments/assets/d3738299-d82b-414e-9e58-045824f84b1c" />
 
 # RESULT
 The program for creating slot timetable using basic HTML tags is executed successfully.
